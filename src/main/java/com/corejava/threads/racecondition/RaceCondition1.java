@@ -6,7 +6,7 @@ public class RaceCondition1 {
 		LongWrapper longWrapper = new LongWrapper(0L);
 		
 		Runnable runnable = () -> {
-			for(int i = 0; i < 1_000; i++) {
+			for(int i = 0; i < 1_0000; i++) {
 				longWrapper.incrementValue();
 			}
 		};

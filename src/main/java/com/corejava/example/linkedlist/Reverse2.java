@@ -17,11 +17,11 @@ public class Reverse2 {
 	//Iterative Approach
 	public static Node reverse1(Node head) {
 		Node curr = head;
-		Node prev = null;
+		Node tmp = null;
 		Node next = null;
 		
-		while(null != head && null != head.next) {
-			prev = head.next;
+		while(null != head.next) {
+			tmp = head.next;
 			head.next = curr;
 			
 			curr = head.next;

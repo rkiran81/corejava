@@ -8,7 +8,7 @@ public class Executors {
 		
 		Runnable runnable = () -> System.out.println("In Runnable");
 		
-		executor.execute(runnable);
-		executor.submit(runnable);
+		executor.execute(runnable);//returns void
+		executor.submit(runnable);//returns Future
 	}
 }

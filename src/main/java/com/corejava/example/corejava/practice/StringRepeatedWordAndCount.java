@@ -3,6 +3,7 @@ package com.corejava.example.corejava.practice;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -14,6 +15,22 @@ public class StringRepeatedWordAndCount {
 		Map<String, Integer> data2 = new LinkedHashMap<String, Integer>();
 		Map<String, Integer> data3 = new HashMap<String, Integer>();
 		String data = "I am a java developer and I am proud as developer";
+		/////////////////////////////////////////////////////////////////
+		String[] words = data.split(" ");
+		Map<String, Integer> dups = new HashMap<>();
+		for(String word : words) {
+			dups.put(word, dups.getOrDefault(word, 0)+1);
+		}
+		System.out.println("getOrDefault - "+dups);
+		Map<String, Integer> dups1 = new HashMap<>();
+		for(String word : words) {
+			Integer computeIfPresent = dups1.computeIfPresent(word, (k,v)->v+1);
+			if(null == computeIfPresent) {
+				dups1.put(word, 1);
+			}
+		}
+		System.out.println("computeIfPresent - "+dups1);
+		/////////////////////////////////////////////////////////////////
 		/////////////////////////////////////////////////////////////////
 		data.chars()
 		.forEach(ch1 -> {
